@@ -1,7 +1,7 @@
 /**
  * Portfólio de Eduardo Silveira - Jovem Aprendiz
  * Script de interatividade e funcionalidades
- * Versão: 2.0 (Responsivo)
+ * Versão: 3.0 (Responsivo + Foto corrigida)
  */
 
 // Dados de contato e mensagens
@@ -20,6 +20,13 @@ const contatoInfo = {
     ]
 };
 
+// URLs alternativas para a foto (tentativas)
+const fotoUrls = [
+    'https://lh3.googleusercontent.com/d/1X7BuHYfKc4R2ovoI9yGqVPFZxXt_4iP1',
+    'https://drive.google.com/thumbnail?id=1X7BuHYfKc4R2ovoI9yGqVPFZxXt_4iP1&sz=w1000',
+    'https://drive.google.com/uc?export=view&id=1X7BuHYfKc4R2ovoI9yGqVPFZxXt_4iP1'
+];
+
 /**
  * Mostra as informações de contato
  */
@@ -28,22 +35,17 @@ function mostrarContato() {
     if (!btn) return;
     
     const originalHtml = btn.innerHTML;
-    const btnMainText = btn.querySelector('.btn-main-text')?.innerHTML || btn.innerHTML;
     
     // Feedback visual de carregamento
     btn.innerHTML = '<span class="btn-main-text"><i class="fas fa-spinner fa-spin"></i> CARREGANDO...</span>';
     btn.disabled = true;
     
     setTimeout(() => {
-        // Escolhe mensagem aleatória
         const mensagem = contatoInfo.mensagens[Math.floor(Math.random() * contatoInfo.mensagens.length)];
-        
-        // Cria alert personalizado
         const mensagemCompleta = `📞 ${contatoInfo.telefone}\n📧 ${contatoInfo.email}\n\n${mensagem}`;
         
         alert(mensagemCompleta);
         
-        // Restaura o botão
         btn.innerHTML = originalHtml;
         btn.disabled = false;
     }, 500);
@@ -51,11 +53,8 @@ function mostrarContato() {
 
 /**
  * Função para copiar texto para área de transferência
- * @param {string} texto - Texto a ser copiado
- * @param {string} mensagem - Mensagem de confirmação
  */
 function copiarTexto(texto, mensagem) {
-    // Verifica se a API de clipboard está disponível
     if (navigator.clipboard && navigator.clipboard.writeText) {
         navigator.clipboard.writeText(texto).then(() => {
             mostrarNotificacao(mensagem);
@@ -67,9 +66,6 @@ function copiarTexto(texto, mensagem) {
     }
 }
 
-/**
- * Fallback para cópia de texto em navegadores antigos
- */
 function fallbackCopiarTexto(texto, mensagem) {
     const textarea = document.createElement('textarea');
     textarea.value = texto;
@@ -90,10 +86,8 @@ function fallbackCopiarTexto(texto, mensagem) {
 
 /**
  * Mostra uma notificação temporária
- * @param {string} mensagem - Mensagem a ser exibida
  */
 function mostrarNotificacao(mensagem) {
-    // Remove notificações anteriores
     const notificacoesAntigas = document.querySelectorAll('.custom-notification');
     notificacoesAntigas.forEach(n => n.remove());
     
@@ -123,7 +117,6 @@ function mostrarNotificacao(mensagem) {
     
     document.body.appendChild(notificacao);
     
-    // Ajusta para telas pequenas
     if (window.innerWidth <= 480) {
         notificacao.style.whiteSpace = 'normal';
         notificacao.style.padding = '0.8rem 1rem';
@@ -137,27 +130,66 @@ function mostrarNotificacao(mensagem) {
 }
 
 /**
- * Verifica e ajusta responsividade em tempo real
+ * Tenta carregar a foto com múltiplas URLs
  */
-function checkResponsividade() {
-    // Ajustes dinâmicos se necessário
-    const width = window.innerWidth;
-    const btnSubliminar = document.querySelector('.btn-subliminar');
+function carregarFoto() {
+    const img = document.querySelector('.foto-eduardo');
+    if (!img) return;
     
-    if (btnSubliminar) {
-        if (width <= 480) {
-            btnSubliminar.style.padding = '0.8rem 1.5rem';
+    let tentativaAtual = 0;
+    
+    function tentarProximaUrl() {
+        if (tentativaAtual < fotoUrls.length) {
+            img.src = fotoUrls[tentativaAtual];
+            tentativaAtual++;
         } else {
-            btnSubliminar.style.padding = '';
+            // Se todas falharem, usa o fallback
+            img.src = 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/svgs/solid/user-graduate.svg';
+            img.style.objectFit = 'contain';
+            img.style.padding = '2rem';
+            img.style.background = 'linear-gradient(145deg, #135b9c, #3182ce)';
+        }
+    }
+    
+    img.onerror = tentarProximaUrl;
+    tentarProximaUrl();
+}
+
+/**
+ * Ajusta responsividade em tempo real
+ */
+function ajustarResponsividade() {
+    const width = window.innerWidth;
+    const btn = document.querySelector('.btn-subliminar');
+    const hero = document.querySelector('.hero');
+    
+    if (btn) {
+        if (width <= 480) {
+            btn.style.padding = '0.7rem 1rem';
+        } else if (width <= 768) {
+            btn.style.padding = '0.8rem 2rem';
+        } else {
+            btn.style.padding = '';
+        }
+    }
+    
+    if (hero) {
+        if (width <= 480) {
+            hero.style.gap = '1rem';
+        } else {
+            hero.style.gap = '';
         }
     }
 }
 
 /**
- * Inicializa eventos quando a página carrega
+ * Inicializa eventos
  */
 document.addEventListener('DOMContentLoaded', () => {
-    // Anima os cards sequencialmente
+    // Tenta carregar a foto
+    carregarFoto();
+    
+    // Anima os cards
     const cards = document.querySelectorAll('.info-card');
     cards.forEach((card, index) => {
         card.style.opacity = '0';
@@ -169,10 +201,10 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 100 * index);
     });
     
-    // Verifica responsividade inicial
-    checkResponsividade();
+    // Ajusta responsividade inicial
+    ajustarResponsividade();
     
-    // Adiciona listeners para eventos de toque em dispositivos móveis
+    // Eventos de toque para mobile
     if ('ontouchstart' in window) {
         document.querySelectorAll('.contact-item, .btn-subliminar').forEach(el => {
             el.addEventListener('touchstart', function() {
@@ -185,9 +217,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-// Listener para redimensionamento da janela
+// Listener para redimensionamento
 window.addEventListener('resize', () => {
-    checkResponsividade();
+    ajustarResponsividade();
 });
 
 // Adiciona animação de fadeInOut
