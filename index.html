@@ -1,8 +1,8 @@
-F<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5, user-scalable=yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
     <title>Eduardo Silveira · Jovem Aprendiz · Portfólio</title>
     
     <!-- Meta tags para SEO -->
@@ -13,8 +13,8 @@ F<!DOCTYPE html>
     <!-- Open Graph para compartilhamento -->
     <meta property="og:title" content="Eduardo Silveira · Jovem Aprendiz">
     <meta property="og:description" content="Perfil profissional com energia, foco e vontade de crescer">
-    <meta property="og:image" content="https://drive.google.com/file/d/1X7BuHYfKc4R2ovoI9yGqVPFZxXt_4iP1/view?usp=sharing">
-    <meta property="og:url" content="https://github.com/mluizaramos2017-stack/EduardoBarbosa">
+    <meta property="og:image" content="https://lh3.googleusercontent.com/d/1X7BuHYfKc4R2ovoI9yGqVPFZxXt_4iP1">
+    <meta property="og:url" content="https://seu-usuario.github.io/portfolio-eduardo">
     <meta property="og:type" content="profile">
     
     <!-- Favicon -->
@@ -43,13 +43,20 @@ F<!DOCTYPE html>
                     </div>
                 </div>
                 
-                <!-- FOTO DO EDUARDO - via Google Drive -->
+                <!-- FOTO DO EDUARDO - Corrigida com múltiplas tentativas -->
                 <div class="foto-container">
-                    <img src="https://drive.google.com/uc?export=view&id=1X7BuHYfKc4R2ovoI9yGqVPFZxXt_4iP1" 
-                         alt="Eduardo Barbosa da Silveira" 
-                         class="foto-eduardo"
-                         loading="lazy"
-                         onerror="this.onerror=null; this.src='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/svgs/solid/user-graduate.svg'; this.style.objectFit='contain'; this.style.padding='2rem'; this.style.background='linear-gradient(145deg, #135b9c, #3182ce)';">
+                    <picture>
+                        <!-- Primeira tentativa: Google Drive via lh3 (mais confiável) -->
+                        <source srcset="https://lh3.googleusercontent.com/d/1X7BuHYfKc4R2ovoI9yGqVPFZxXt_4iP1" type="image/jpeg">
+                        <!-- Segunda tentativa: via IDs proxy -->
+                        <source srcset="https://drive.google.com/thumbnail?id=1X7BuHYfKc4R2ovoI9yGqVPFZxXt_4iP1&sz=w1000" type="image/jpeg">
+                        <!-- Fallback: ícone do Font Awesome -->
+                        <img src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/svgs/solid/user-graduate.svg" 
+                             alt="Eduardo Barbosa da Silveira" 
+                             class="foto-eduardo"
+                             loading="lazy"
+                             onerror="this.onerror=null; this.src='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/svgs/solid/user-graduate.svg'; this.style.objectFit='contain'; this.style.padding='2rem'; this.style.background='linear-gradient(145deg, #135b9c, #3182ce)';">
+                    </picture>
                 </div>
             </div>
 
