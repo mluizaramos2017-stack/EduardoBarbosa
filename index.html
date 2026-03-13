@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5, user-scalable=yes">
     <title>Eduardo Silveira · Jovem Aprendiz · Portfólio</title>
     
     <!-- Meta tags para SEO -->
@@ -12,13 +12,13 @@
     
     <!-- Open Graph para compartilhamento -->
     <meta property="og:title" content="Eduardo Silveira · Jovem Aprendiz">
-    <meta property="og:description" content="Perfil profissional com energia e foco">
-    <!-- A imagem será adicionada via URL pública -->
+    <meta property="og:description" content="Perfil profissional com energia, foco e vontade de crescer">
     <meta property="og:image" content="https://drive.google.com/uc?export=view&id=1X7BuHYfKc4R2ovoI9yGqVPFZxXt_4iP1">
-    <meta property="og:url" content="https://seu-usuario.github.io/seu-repositorio">
+    <meta property="og:url" content="https://seu-usuario.github.io/portfolio-eduardo">
+    <meta property="og:type" content="profile">
     
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>👨‍🎓</text></svg>">
+    <link rel="icon" type="image/png" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>👨‍🎓</text></svg>">
     
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -27,276 +27,156 @@
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-    <div class="profile-card" id="profileCard">
-        <!-- HEADER COM FOTO -->
-        <div class="hero">
-            <div class="title-section">
-                <h1>EDUARDO BARBOSA<br>DA SILVEIRA</h1>
-                <div class="subhead">
-                    <i class="fas fa-rocket"></i> Jovem Aprendiz
-                </div>
-                <div class="badge-container">
-                    <span class="badge"><i class="fas fa-check-circle"></i> 2º ano Ensino Médio</span>
-                    <span class="badge"><i class="fas fa-certificate"></i> Informática + ADM</span>
-                    <span class="badge"><i class="fas fa-certificate"></i> Marketing Digital</span>
-                </div>
-            </div>
-            
-            <!-- FOTO DO EDUARDO - via Google Drive -->
-            <div class="foto-container">
-                <img src="https://drive.google.com/uc?export=view&id=1X7BuHYfKc4R2ovoI9yGqVPFZxXt_4iP1" 
-                     alt="Eduardo Barbosa da Silveira" 
-                     class="foto-eduardo"
-                     onerror="this.onerror=null; this.src='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/svgs/solid/user-graduate.svg'; this.style.objectFit='contain'; this.style.padding='2rem';">
-            </div>
-        </div>
-
-        <!-- CONTATO RÁPIDO -->
-        <div class="quick-contact">
-            <div class="contact-item" title="Clique para copiar" onclick="copiarTexto('Simões Filho – BA', 'Localização copiada!')"><i class="fas fa-map-pin"></i> Simões Filho – BA</div>
-            <div class="contact-item" title="Clique para copiar" onclick="copiarTexto('(71) 98481-6493', 'Telefone copiado!')"><i class="fas fa-phone-alt"></i> (71) 98481-6493</div>
-            <div class="contact-item" title="Clique para copiar" onclick="copiarTexto('Eduardo.silveira899@gmail.com', 'E-mail copiado!')"><i class="fas fa-envelope"></i> Eduardo.silveira899@gmail.com</div>
-            <div class="contact-item"><i class="fas fa-birthday-cake"></i> 23/05/2006</div>
-        </div>
-
-        <!-- GRID PRINCIPAL -->
-        <div class="main-grid">
-            <!-- COLUNA ESQUERDA -->
-            <div>
-                <div class="info-card">
-                    <div class="card-title"><i class="fas fa-pen-fancy"></i> RESUMO PROFISSIONAL</div>
-                    <div class="highlight-text">
-                        Estudante do 2º ano do Ensino Médio com formação complementar em informática técnica, 
-                        administração, marketing digital e mídias sociais. Possui treinamento em atendimento em farmácia, 
-                        desenvolvendo habilidades em atendimento ao cliente, organização de produtos e comunicação com o público. 
-                        Perfil responsável, disciplinado e proativo, com facilidade para aprender novas tarefas, trabalhar em 
-                        equipe e apoiar rotinas administrativas.
+    <div class="container">
+        <div class="profile-card" id="profileCard">
+            <!-- HEADER COM FOTO -->
+            <div class="hero">
+                <div class="title-section">
+                    <h1>EDUARDO BARBOSA<br>DA SILVEIRA</h1>
+                    <div class="subhead">
+                        <i class="fas fa-rocket"></i> Jovem Aprendiz
+                    </div>
+                    <div class="badge-container">
+                        <span class="badge"><i class="fas fa-check-circle"></i> 2º ano Ensino Médio</span>
+                        <span class="badge"><i class="fas fa-certificate"></i> Informática + ADM</span>
+                        <span class="badge"><i class="fas fa-certificate"></i> Marketing Digital</span>
                     </div>
                 </div>
-
-                <div class="info-card">
-                    <div class="card-title"><i class="fas fa-cogs"></i> COMPETÊNCIAS</div>
-                    <ul class="skill-list">
-                        <li><i class="fas fa-headset"></i> Atendimento</li>
-                        <li><i class="fas fa-folder-open"></i> Organização</li>
-                        <li><i class="fas fa-comments"></i> Comunicação</li>
-                        <li><i class="fas fa-users"></i> Trabalho em equipe</li>
-                        <li><i class="fas fa-laptop"></i> Informática</li>
-                        <li><i class="fas fa-rocket"></i> Aprendizado rápido</li>
-                        <li><i class="fas fa-clock"></i> Pontualidade</li>
-                        <li><i class="fas fa-chart-line"></i> Marketing digital</li>
-                        <li><i class="fas fa-hashtag"></i> Mídias sociais</li>
-                        <li><i class="fas fa-hand-sparkles"></i> Organização</li>
-                    </ul>
-                </div>
-
-                <div class="info-card">
-                    <div class="card-title"><i class="fas fa-clinic-medical"></i> TREINAMENTO FARMÁCIA</div>
-                    <div class="training-info">
-                        <i class="fas fa-calendar-alt" style="color:#e68a2e;"></i> 1 mês · Atendente de Farmácia
-                    </div>
-                    <ul class="training-list">
-                        <li><i class="fas fa-circle-check"></i> Abordagem ao público</li>
-                        <li><i class="fas fa-circle-check"></i> Organização e reposição</li>
-                        <li><i class="fas fa-circle-check"></i> Orientação básica ao cliente</li>
-                    </ul>
+                
+                <!-- FOTO DO EDUARDO - via Google Drive -->
+                <div class="foto-container">
+                    <img src="https://drive.google.com/uc?export=view&id=1X7BuHYfKc4R2ovoI9yGqVPFZxXt_4iP1" 
+                         alt="Eduardo Barbosa da Silveira" 
+                         class="foto-eduardo"
+                         loading="lazy"
+                         onerror="this.onerror=null; this.src='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/svgs/solid/user-graduate.svg'; this.style.objectFit='contain'; this.style.padding='2rem'; this.style.background='linear-gradient(145deg, #135b9c, #3182ce)';">
                 </div>
             </div>
 
-            <!-- COLUNA DIREITA -->
-            <div>
-                <div class="info-card">
-                    <div class="card-title"><i class="fas fa-graduation-cap"></i> FORMAÇÃO</div>
-                    <div class="formacao-item">
-                        <strong>Ensino Médio – 2º Ano</strong>
-                        <span class="status-badge">cursando</span>
-                    </div>
-                    <div class="conclusao">Conclusão prevista: <strong>2025</strong></div>
+            <!-- CONTATO RÁPIDO -->
+            <div class="quick-contact">
+                <div class="contact-item" title="Clique para copiar" onclick="copiarTexto('Simões Filho – BA', 'Localização copiada!')">
+                    <i class="fas fa-map-pin"></i> <span>Simões Filho – BA</span>
                 </div>
-
-                <div class="info-card">
-                    <div class="card-title"><i class="fas fa-certificate"></i> QUALIFICAÇÕES</div>
-                    <div class="qualificacoes-list">
-                        <span><i class="fas fa-computer"></i> Informática Técnica</span>
-                        <span><i class="fas fa-briefcase"></i> Administração Básica</span>
-                        <span><i class="fas fa-share-nodes"></i> Mídias Sociais</span>
-                        <span><i class="fas fa-chart-simple"></i> Marketing Digital</span>
-                        <span><i class="fas fa-language"></i> Inglês Básico</span>
-                    </div>
+                <div class="contact-item" title="Clique para copiar" onclick="copiarTexto('(71) 98481-6493', 'Telefone copiado!')">
+                    <i class="fas fa-phone-alt"></i> <span>(71) 98481-6493</span>
                 </div>
-
-                <div class="info-card">
-                    <div class="card-title"><i class="fas fa-lightbulb"></i> INTERESSES</div>
-                    <p><i class="fas fa-heart" style="color:#dc2626;"></i> Tecnologia, informática, atendimento, inovação</p>
-                    <p><i class="fas fa-arrow-right" style="color:#3182ce;"></i> Disponível para aprender e colaborar</p>
-                    <div class="pill-data">
-                        <span><i class="fas fa-badge-check"></i> responsável</span>
-                        <span><i class="fas fa-badge-check"></i> proativo</span>
-                        <span><i class="fas fa-badge-check"></i> disciplinado</span>
-                    </div>
+                <div class="contact-item" title="Clique para copiar" onclick="copiarTexto('Eduardo.silveira899@gmail.com', 'E-mail copiado!')">
+                    <i class="fas fa-envelope"></i> <span>Eduardo.silveira899@gmail.com</span>
                 </div>
-
-                <div class="nascimento-card">
-                    <i class="fas fa-id-card"></i> 
-                    <span>Data nasc.: 23/05/2006 · <strong>18 anos (idade aprendiz)</strong></span>
-                </div>
-            </div>
-        </div>
-
-        <!-- FRASE DE EFEITO -->
-        <div class="cta-message">
-            <i class="fas fa-star"></i> Energia, foco e vontade de crescer <i class="fas fa-star"></i>
-        </div>
-
-        <!-- NOVA FRASE MOTIVACIONAL PARA O RECRUTADOR -->
-        <div class="frase-recrtador">
-            <i class="fas fa-quote-left"></i> 
-            Recrutador, o futuro da sua equipe começa com uma escolha inteligente. 
-            <i class="fas fa-quote-right"></i>
-        </div>
-
-        <!-- BOTÃO COM MENSAGEM SUBLIMINAR -->
-        <div class="hire-zone">
-            <button class="btn-subliminar" onclick="mostrarContato()">
-                <i class="fas fa-handshake"></i> CONHECER PERFIL <i class="fas fa-arrow-right"></i>
-                <div class="subliminar-text">✦ O próximo passo para o seu time ✦</div>
-            </button>
-        </div>
-        <div class="footer-note">
-            <i class="fas fa-phone-volume"></i> Clique para ver contato e mensagem
-        </div>
-    </div>
-
-    <!-- JavaScript -->
-    <script src="assets/js/script.js"></script>
-</body>
-</html>                <div class="badge-container">
-                    <span class="badge"><i class="fas fa-check-circle"></i> 2º ano Ensino Médio</span>
-                    <span class="badge"><i class="fas fa-certificate"></i> Informática + ADM</span>
-                    <span class="badge"><i class="fas fa-certificate"></i> Marketing Digital</span>
-                    <span class="badge"><i class="fas fa-certificate"></i> Mídias Sociais</span>
-                </div>
-            </div>
-            
-            <!-- FOTO DO EDUARDO -->
-            <div class="foto-container">
-                <img src="assets/images/eduardo-silveira.jpg" 
-                     alt="Eduardo Barbosa da Silveira" 
-                     class="foto-eduardo"
-                     onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                <div class="foto-placeholder">
-                    <i class="fas fa-user-graduate"></i>
-                </div>
-            </div>
-        </div>
-
-        <!-- CONTATO RÁPIDO -->
-        <div class="quick-contact">
-            <div class="contact-item"><i class="fas fa-map-pin"></i> Simões Filho – BA</div>
-            <div class="contact-item"><i class="fas fa-phone-alt"></i> (71) 98481-6493</div>
-            <div class="contact-item"><i class="fas fa-envelope"></i> Eduardo.silveira899@gmail.com</div>
-            <div class="contact-item"><i class="fas fa-birthday-cake"></i> 23/05/2006</div>
-        </div>
-
-        <!-- CONTEÚDO PRINCIPAL -->
-        <div class="main-grid">
-            <!-- COLUNA ESQUERDA -->
-            <div>
-                <div class="info-card">
-                    <div class="card-title"><i class="fas fa-pen-fancy"></i> RESUMO PROFISSIONAL</div>
-                    <div class="highlight-text">
-                        Estudante do 2º ano do Ensino Médio com formação complementar em informática técnica, 
-                        administração, marketing digital e mídias sociais. Possui treinamento em atendimento em farmácia, 
-                        desenvolvendo habilidades em atendimento ao cliente, organização de produtos e comunicação com o público. 
-                        Perfil responsável, disciplinado e proativo, com facilidade para aprender novas tarefas, trabalhar em 
-                        equipe e apoiar rotinas administrativas e operacionais.
-                    </div>
-                </div>
-
-                <div class="info-card">
-                    <div class="card-title"><i class="fas fa-cogs"></i> COMPETÊNCIAS</div>
-                    <ul class="skill-list">
-                        <li><i class="fas fa-headset"></i> Atendimento</li>
-                        <li><i class="fas fa-folder-open"></i> Organização</li>
-                        <li><i class="fas fa-comments"></i> Comunicação</li>
-                        <li><i class="fas fa-users"></i> Trabalho em equipe</li>
-                        <li><i class="fas fa-laptop"></i> Informática</li>
-                        <li><i class="fas fa-rocket"></i> Aprendizado rápido</li>
-                        <li><i class="fas fa-clock"></i> Pontualidade</li>
-                        <li><i class="fas fa-chart-line"></i> Marketing digital</li>
-                        <li><i class="fas fa-hashtag"></i> Mídias sociais</li>
-                        <li><i class="fas fa-hand-sparkles"></i> Organização</li>
-                        <li><i class="fas fa-calculator"></i> Administração</li>
-                    </ul>
-                </div>
-
-                <div class="info-card">
-                    <div class="card-title"><i class="fas fa-clinic-medical"></i> TREINAMENTO FARMÁCIA</div>
-                    <div class="training-info">
-                        <i class="fas fa-calendar-alt" style="color:#e68a2e;"></i> 1 mês · Atendente de Farmácia
-                    </div>
-                    <ul class="training-list">
-                        <li><i class="fas fa-circle-check"></i> Abordagem ao público</li>
-                        <li><i class="fas fa-circle-check"></i> Organização e reposição</li>
-                        <li><i class="fas fa-circle-check"></i> Orientação básica ao cliente</li>
-                        <li><i class="fas fa-circle-check"></i> Ambiente organizado</li>
-                    </ul>
+                <div class="contact-item">
+                    <i class="fas fa-birthday-cake"></i> <span>23/05/2006</span>
                 </div>
             </div>
 
-            <!-- COLUNA DIREITA -->
-            <div>
-                <div class="info-card">
-                    <div class="card-title"><i class="fas fa-graduation-cap"></i> FORMAÇÃO</div>
-                    <div class="formacao-item">
-                        <strong>Ensino Médio – 2º Ano</strong>
-                        <span class="status-badge">cursando</span>
+            <!-- GRID PRINCIPAL -->
+            <div class="main-grid">
+                <!-- COLUNA ESQUERDA -->
+                <div class="col-left">
+                    <div class="info-card">
+                        <div class="card-title"><i class="fas fa-pen-fancy"></i> RESUMO PROFISSIONAL</div>
+                        <div class="highlight-text">
+                            Estudante do 2º ano do Ensino Médio com formação complementar em informática técnica, 
+                            administração, marketing digital e mídias sociais. Possui treinamento em atendimento em farmácia, 
+                            desenvolvendo habilidades em atendimento ao cliente, organização de produtos e comunicação com o público. 
+                            Perfil responsável, disciplinado e proativo, com facilidade para aprender novas tarefas, trabalhar em 
+                            equipe e apoiar rotinas administrativas.
+                        </div>
                     </div>
-                    <div class="conclusao">Conclusão prevista: <strong>2025</strong></div>
+
+                    <div class="info-card">
+                        <div class="card-title"><i class="fas fa-cogs"></i> COMPETÊNCIAS</div>
+                        <ul class="skill-list">
+                            <li><i class="fas fa-headset"></i> Atendimento</li>
+                            <li><i class="fas fa-folder-open"></i> Organização</li>
+                            <li><i class="fas fa-comments"></i> Comunicação</li>
+                            <li><i class="fas fa-users"></i> Trabalho em equipe</li>
+                            <li><i class="fas fa-laptop"></i> Informática</li>
+                            <li><i class="fas fa-rocket"></i> Aprendizado rápido</li>
+                            <li><i class="fas fa-clock"></i> Pontualidade</li>
+                            <li><i class="fas fa-chart-line"></i> Marketing digital</li>
+                            <li><i class="fas fa-hashtag"></i> Mídias sociais</li>
+                            <li><i class="fas fa-hand-sparkles"></i> Organização</li>
+                        </ul>
+                    </div>
+
+                    <div class="info-card">
+                        <div class="card-title"><i class="fas fa-clinic-medical"></i> TREINAMENTO FARMÁCIA</div>
+                        <div class="training-info">
+                            <i class="fas fa-calendar-alt" style="color:#e68a2e;"></i> 1 mês · Atendente de Farmácia
+                        </div>
+                        <ul class="training-list">
+                            <li><i class="fas fa-circle-check"></i> Abordagem ao público</li>
+                            <li><i class="fas fa-circle-check"></i> Organização e reposição</li>
+                            <li><i class="fas fa-circle-check"></i> Orientação básica ao cliente</li>
+                        </ul>
+                    </div>
                 </div>
 
-                <div class="info-card">
-                    <div class="card-title"><i class="fas fa-certificate"></i> QUALIFICAÇÕES</div>
-                    <div class="qualificacoes-list">
-                        <span><i class="fas fa-computer"></i> Informática Técnica</span>
-                        <span><i class="fas fa-briefcase"></i> Administração Básica</span>
-                        <span><i class="fas fa-share-nodes"></i> Mídias Sociais</span>
-                        <span><i class="fas fa-chart-simple"></i> Marketing Digital</span>
-                        <span><i class="fas fa-language"></i> Inglês Básico</span>
+                <!-- COLUNA DIREITA -->
+                <div class="col-right">
+                    <div class="info-card">
+                        <div class="card-title"><i class="fas fa-graduation-cap"></i> FORMAÇÃO</div>
+                        <div class="formacao-item">
+                            <strong>Ensino Médio – 2º Ano</strong>
+                            <span class="status-badge">cursando</span>
+                        </div>
+                        <div class="conclusao">Conclusão prevista: <strong>2025</strong></div>
                     </div>
-                </div>
 
-                <div class="info-card">
-                    <div class="card-title"><i class="fas fa-lightbulb"></i> INTERESSES</div>
-                    <p><i class="fas fa-heart" style="color:#dc2626;"></i> Tecnologia, informática, atendimento, inovação</p>
-                    <p><i class="fas fa-arrow-right" style="color:#3182ce;"></i> Disponível para aprender, seguir processos e colaborar</p>
-                    <div class="pill-data">
-                        <span><i class="fas fa-badge-check"></i> responsável</span>
-                        <span><i class="fas fa-badge-check"></i> proativo</span>
-                        <span><i class="fas fa-badge-check"></i> disciplinado</span>
+                    <div class="info-card">
+                        <div class="card-title"><i class="fas fa-certificate"></i> QUALIFICAÇÕES</div>
+                        <div class="qualificacoes-list">
+                            <span><i class="fas fa-computer"></i> Informática Técnica</span>
+                            <span><i class="fas fa-briefcase"></i> Administração Básica</span>
+                            <span><i class="fas fa-share-nodes"></i> Mídias Sociais</span>
+                            <span><i class="fas fa-chart-simple"></i> Marketing Digital</span>
+                            <span><i class="fas fa-language"></i> Inglês Básico</span>
+                        </div>
                     </div>
-                </div>
 
-                <div class="nascimento-card">
-                    <i class="fas fa-id-card"></i> 
-                    <span>Data nasc.: 23/05/2006 · <strong>18 anos (idade aprendiz)</strong></span>
+                    <div class="info-card">
+                        <div class="card-title"><i class="fas fa-lightbulb"></i> INTERESSES</div>
+                        <p><i class="fas fa-heart" style="color:#dc2626;"></i> Tecnologia, informática, atendimento, inovação</p>
+                        <p><i class="fas fa-arrow-right" style="color:#3182ce;"></i> Disponível para aprender e colaborar</p>
+                        <div class="pill-data">
+                            <span><i class="fas fa-badge-check"></i> responsável</span>
+                            <span><i class="fas fa-badge-check"></i> proativo</span>
+                            <span><i class="fas fa-badge-check"></i> disciplinado</span>
+                        </div>
+                    </div>
+
+                    <div class="nascimento-card">
+                        <i class="fas fa-id-card"></i> 
+                        <span>Data nasc.: 23/05/2006 · <strong>18 anos (idade aprendiz)</strong></span>
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <!-- FRASE DE EFEITO -->
-        <div class="cta-message">
-            <i class="fas fa-star"></i> Perfil com energia, foco e vontade de crescer <i class="fas fa-star"></i>
-        </div>
+            <!-- FRASE DE EFEITO -->
+            <div class="cta-message">
+                <i class="fas fa-star"></i> Energia, foco e vontade de crescer <i class="fas fa-star"></i>
+            </div>
 
-        <!-- BOTÃO DE CONTRATAÇÃO -->
-        <div class="hire-zone">
-            <button class="hire-btn" id="contratarBtn">
-                <i class="fas fa-handshake"></i> CONTRATAR ESTE TALENTO <i class="fas fa-arrow-right"></i>
-            </button>
-        </div>
-        <div class="footer-note">
-            <i class="fas fa-phone-volume"></i> Clique no botão para ver os contatos
+            <!-- FRASE MOTIVACIONAL PARA O RECRUTADOR -->
+            <div class="frase-recrtador">
+                <i class="fas fa-quote-left"></i> 
+                Recrutador, o futuro da sua equipe começa com uma escolha inteligente. 
+                <i class="fas fa-quote-right"></i>
+            </div>
+
+            <!-- BOTÃO COM MENSAGEM SUBLIMINAR -->
+            <div class="hire-zone">
+                <button class="btn-subliminar" onclick="mostrarContato()">
+                    <span class="btn-main-text">
+                        <i class="fas fa-handshake"></i> CONHECER PERFIL <i class="fas fa-arrow-right"></i>
+                    </span>
+                    <span class="subliminar-text">✦ O próximo passo para o seu time ✦</span>
+                </button>
+            </div>
+            <div class="footer-note">
+                <i class="fas fa-phone-volume"></i> Clique para ver contato e mensagem
+            </div>
         </div>
     </div>
 
