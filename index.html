@@ -1,312 +1,60 @@
-v            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            border-radius: 3rem 1rem 3rem 1rem;
-            box-shadow: 0 30px 50px rgba(0, 20, 80, 0.25), 0 10px 25px rgba(0, 0, 0, 0.1), inset 0 2px 4px rgba(255,255,255,0.6);
-            padding: 2rem 2.5rem;
-            border: 2px solid rgba(255,255,255,0.5);
-            transition: all 0.4s ease;
-            animation: cardGlow 4s infinite alternate;
-        }
-        @keyframes cardGlow {
-            0% { box-shadow: 0 30px 50px rgba(0, 40, 120, 0.25), 0 10px 25px rgba(0,0,0,0.1); }
-            100% { box-shadow: 0 35px 65px rgba(0, 70, 200, 0.35), 0 15px 30px rgba(0,30,100,0.2); }
-        }
-        .profile-card:hover {
-            transform: scale(1.01) translateY(-6px);
-            background: rgba(255, 255, 255, 0.92);
-        }
-
-        /* grid cabeçalho + foto */
-        .hero {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 2rem;
-            align-items: center;
-            justify-content: space-between;
-            margin-bottom: 2rem;
-            border-bottom: 3px dashed #2d6fb0;
-            padding-bottom: 1.8rem;
-        }
-        .title-section h1 {
-            font-size: 3.2rem;
-            font-weight: 700;
-            background: linear-gradient(135deg, #0b2b4f, #1c4e7c);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            letter-spacing: -0.02em;
-            line-height: 1.2;
-            text-shadow: 2px 4px 12px rgba(25, 85, 160, 0.2);
-        }
-        .title-section .subhead {
-            font-size: 1.5rem;
-            font-weight: 500;
-            color: #1e4a7a;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            margin-top: 0.25rem;
-        }
-        .subhead i {
-            color: #f5b342;
-            font-size: 1.8rem;
-            filter: drop-shadow(0 2px 4px gold);
-        }
-
-        .foto-container {
-            background: #ffffffcc;
-            border-radius: 40% 60% 30% 70% / 50% 40% 60% 50%;
-            padding: 0.6rem;
-            box-shadow: 0 20px 30px rgba(20,60,140,0.3);
-            border: 3px solid white;
-            transition: 0.3s;
-            animation: fotoWobble 8s infinite ease-in-out;
-        }
-        @keyframes fotoWobble {
-            0% { border-radius: 40% 60% 30% 70% / 50% 40% 60% 50%; }
-            50% { border-radius: 60% 40% 70% 30% / 40% 60% 40% 60%; }
-            100% { border-radius: 40% 60% 30% 70% / 50% 40% 60% 50%; }
-        }
-        .foto-placeholder {
-            width: 140px;
-            height: 140px;
-            border-radius: inherit;
-            background: linear-gradient(145deg, #135b9c, #3182ce);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 5rem;
-            font-weight: 500;
-            box-shadow: inset 0 -3px 8px rgba(0,0,0,0.2);
-            border: 2px solid rgba(255,255,255,0.6);
-        }
-        .foto-placeholder i {
-            font-size: 5rem;
-            filter: drop-shadow(2px 4px 6px #0a2c4e);
-        }
-
-        /* contato rápido cintilante */
-        .quick-contact {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1.8rem;
-            background: rgba(255,255,255,0.6);
-            border-radius: 60px;
-            padding: 0.8rem 2rem;
-            margin-bottom: 2rem;
-            justify-content: center;
-            border: 1px solid white;
-            backdrop-filter: blur(5px);
-        }
-        .contact-item {
-            display: flex;
-            align-items: center;
-            gap: 0.6rem;
-            font-size: 1.2rem;
-            font-weight: 500;
-            color: #103a66;
-            transition: 0.2s;
-        }
-        .contact-item i {
-            color: #ea9d2c;
-            font-size: 1.6rem;
-        }
-        .contact-item:hover {
-            transform: scale(1.05);
-            color: #0b2b4f;
-            text-shadow: 0 0 5px #ffd966;
-        }
-
-        /* grids principais */
-        .main-grid {
-            display: grid;
-            grid-template-columns: 2fr 1.2fr;
-            gap: 1.8rem;
-            margin-top: 1rem;
-        }
-        @media (max-width: 700px) {
-            .main-grid { grid-template-columns: 1fr; }
-            .hero { flex-direction: column; text-align: center; }
-        }
-
-        /* cards internos */
-        .info-card {
-            background: rgba(255,255,255,0.7);
-            border-radius: 2rem 1rem 2rem 1rem;
-            padding: 1.6rem 1.8rem;
-            margin-bottom: 1.5rem;
-            border: 1px solid rgba(255,255,255,0.8);
-            box-shadow: 0 10px 20px -5px rgba(20,60,130,0.2);
-            transition: all 0.3s;
-            backdrop-filter: blur(4px);
-        }
-        .info-card:hover {
-            background: rgba(255,255,255,0.85);
-            box-shadow: 0 15px 30px -5px #1e4a7a4d;
-            border-left: 5px solid #3182ce;
-        }
-        .card-title {
-            font-size: 1.5rem;
-            font-weight: 600;
-            color: #0f3d6a;
-            border-left: 10px solid #f6b83e;
-            padding-left: 1rem;
-            margin-bottom: 1.4rem;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-        .card-title i {
-            color: #f1a42e;
-        }
-
-        .skill-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.6rem 0.9rem;
-            list-style: none;
-        }
-        .skill-list li {
-            background: white;
-            padding: 0.5rem 1.2rem;
-            border-radius: 30px;
-            font-weight: 500;
-            color: #103a66;
-            box-shadow: 0 4px 8px #00000010;
-            border: 1px solid #cddff7;
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            transition: 0.2s;
-        }
-        .skill-list li i {
-            color: #ea9d2c;
-            font-size: 1rem;
-        }
-        .skill-list li:hover {
-            background: #f1f9ff;
-            border-color: #3182ce;
-            transform: translateY(-3px) scale(1.02);
-        }
-
-        .highlight-text {
-            font-size: 1.05rem;
-            line-height: 1.6;
-            color: #1e293b;
-            margin-bottom: 1rem;
-            padding-left: 0.5rem;
-        }
-
-        .training-badge {
-            background: #fef6e6;
-            border-radius: 1.5rem;
-            padding: 0.5rem 1.2rem;
-            display: inline-block;
-            font-weight: 600;
-            color: #8e5d0b;
-            border: 1px solid #facd7c;
-            margin: 0.5rem 0;
-        }
-
-        .pill-data {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
-            background: #d9e9ff70;
-            border-radius: 3rem;
-            padding: 0.9rem 1.5rem;
-            justify-content: space-around;
-            margin: 1.5rem 0 0.5rem;
-        }
-        .pill-data span {
-            font-weight: 600;
-            color: #05264a;
-        }
-
-        /* botão chamativo contratação */
-        .hire-zone {
-            text-align: center;
-            margin: 2.2rem 0 1rem;
-        }
-        .hire-btn {
-            background: linear-gradient(145deg, #1e4f85, #0f3b66);
-            border: none;
-            color: white;
-            font-size: 2rem;
-            font-weight: 700;
-            padding: 1.2rem 3rem;
-            border-radius: 80px;
-            box-shadow: 0 20px 30px -8px #0f3b66, 0 6px 0 #0b2642, inset 0 2px 10px #a3c6ff;
-            cursor: pointer;
-            transition: 0.15s;
-            display: inline-flex;
-            align-items: center;
-            gap: 1rem;
-            border: 2px solid #ffd58c;
-            letter-spacing: 1px;
-            animation: pulseHire 2s infinite alternate;
-        }
-        .hire-btn i {
-            font-size: 2.2rem;
-            color: #ffd966;
-        }
-        @keyframes pulseHire {
-            0% { transform: scale(1); box-shadow: 0 20px 30px -8px #0f3b66, 0 6px 0 #0b2642; }
-            100% { transform: scale(1.02); box-shadow: 0 28px 40px -5px #0d3e70, 0 8px 0 #0f3b66; }
-        }
-        .hire-btn:hover {
-            background: linear-gradient(145deg, #2a60a0, #134880);
-            transform: scale(1.04) translateY(-4px);
-            box-shadow: 0 30px 40px -8px #0c3f77, 0 8px 0 #0f3b66;
-        }
-
-        /* frases de efeito */
-        .cta-message {
-            font-size: 1.4rem;
-            font-weight: 500;
-            background: #ffffffc0;
-            border-radius: 60px;
-            padding: 0.7rem 2rem;
-            color: #1f4f81;
-            border: 2px dotted #f3b33d;
-            margin: 1rem 0;
-            text-align: center;
-        }
-
-        /* animação sutil no fundo do card */
-        .floating-badge {
-            display: inline-block;
-            animation: float 5s infinite;
-        }
-        @keyframes float {
-            0% { transform: translateY(0); }
-            50% { transform: translateY(-5px); }
-        }
-    </style>
+  <!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eduardo Silveira · Jovem Aprendiz · Portfólio</title>
+    
+    <!-- Meta tags para SEO -->
+    <meta name="description" content="Portfólio profissional de Eduardo Silveira - Jovem Aprendiz com formação em informática, administração e marketing digital">
+    <meta name="keywords" content="Jovem Aprendiz, currículo, informática, marketing digital, administração, Simões Filho">
+    <meta name="author" content="Eduardo Barbosa da Silveira">
+    
+    <!-- Open Graph para compartilhamento -->
+    <meta property="og:title" content="Eduardo Silveira · Jovem Aprendiz">
+    <meta property="og:description" content="Perfil profissional pronto para contratação">
+    <meta property="og:image" content="assets/images/eduardo-silveira.jpg">
+    <meta property="og:url" content="https://seu-usuario.github.io/seu-repositorio">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>👨‍🎓</text></svg>">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <!-- CSS Principal -->
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
     <div class="profile-card" id="profileCard">
-        <!-- cabeçalho com nome e imagem -->
+        <!-- HEADER COM FOTO -->
         <div class="hero">
             <div class="title-section">
                 <h1>EDUARDO BARBOSA<br>DA SILVEIRA</h1>
                 <div class="subhead">
-                    <i class="fas fa-rocket"></i> Jovem Aprendiz · perfo#contratação
+                    <i class="fas fa-rocket"></i> Jovem Aprendiz · Pronto para contratação
                 </div>
-                <div style="margin-top: 1rem; display: flex; gap: 0.5rem; flex-wrap: wrap;">
-                    <span class="training-badge"><i class="fas fa-check-circle" style="color:#2e7d32;"></i> 2º ano Ensino Médio</span>
-                    <span class="training-badge"><i class="fas fa-certificate"></i> Informática + ADM</span>
+                <div class="badge-container">
+                    <span class="badge"><i class="fas fa-check-circle"></i> 2º ano Ensino Médio</span>
+                    <span class="badge"><i class="fas fa-certificate"></i> Informática + ADM</span>
+                    <span class="badge"><i class="fas fa-certificate"></i> Marketing Digital</span>
+                    <span class="badge"><i class="fas fa-certificate"></i> Mídias Sociais</span>
                 </div>
             </div>
+            
+            <!-- FOTO DO EDUARDO -->
             <div class="foto-container">
+                <img src="assets/images/eduardo-silveira.jpg" 
+                     alt="Eduardo Barbosa da Silveira" 
+                     class="foto-eduardo"
+                     onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
                 <div class="foto-placeholder">
                     <i class="fas fa-user-graduate"></i>
                 </div>
             </div>
         </div>
 
-        <!-- contato rápido (chama atenção) -->
+        <!-- CONTATO RÁPIDO -->
         <div class="quick-contact">
             <div class="contact-item"><i class="fas fa-map-pin"></i> Simões Filho – BA</div>
             <div class="contact-item"><i class="fas fa-phone-alt"></i> (71) 98481-6493</div>
@@ -314,62 +62,66 @@ v            backdrop-filter: blur(10px);
             <div class="contact-item"><i class="fas fa-birthday-cake"></i> 23/05/2006</div>
         </div>
 
-        <!-- grid principal: coluna esquerda (resumo/comp) + direita (cursos/form) -->
+        <!-- CONTEÚDO PRINCIPAL -->
         <div class="main-grid">
-            <!-- coluna 1 -->
+            <!-- COLUNA ESQUERDA -->
             <div>
-                <!-- resumo profissional com movimento -->
                 <div class="info-card">
                     <div class="card-title"><i class="fas fa-pen-fancy"></i> RESUMO PROFISSIONAL</div>
                     <div class="highlight-text">
-                        <i class="fas fa-quote-left" style="color:#f5b342; opacity:0.6;"></i> 
-                        Estudante do 2º ano do Ensino Médio com formação complementar em informática técnica, administração, marketing digital e mídias sociais. Possui treinamento em atendimento em farmácia, desenvolvendo habilidades em atendimento ao cliente, organização de produtos e comunicação com o público. Perfil responsável, disciplinado e proativo, com facilidade para aprender novas tarefas, trabalhar em equipe e apoiar rotinas administrativas e operacionais. Busca oportunidade como Jovem Aprendiz para desenvolver experiência profissional e contribuir positivamente com a organização.
+                        Estudante do 2º ano do Ensino Médio com formação complementar em informática técnica, 
+                        administração, marketing digital e mídias sociais. Possui treinamento em atendimento em farmácia, 
+                        desenvolvendo habilidades em atendimento ao cliente, organização de produtos e comunicação com o público. 
+                        Perfil responsável, disciplinado e proativo, com facilidade para aprender novas tarefas, trabalhar em 
+                        equipe e apoiar rotinas administrativas e operacionais.
                     </div>
                 </div>
 
-                <!-- competências e habilidades (com ícones) -->
                 <div class="info-card">
                     <div class="card-title"><i class="fas fa-cogs"></i> COMPETÊNCIAS</div>
                     <ul class="skill-list">
-                        <li><i class="fas fa-headset"></i> Atendimento cliente</li>
-                        <li><i class="fas fa-folder-open"></i> Organização documentos</li>
-                        <li><i class="fas fa-comments"></i> Comunicação clara</li>
+                        <li><i class="fas fa-headset"></i> Atendimento</li>
+                        <li><i class="fas fa-folder-open"></i> Organização</li>
+                        <li><i class="fas fa-comments"></i> Comunicação</li>
                         <li><i class="fas fa-users"></i> Trabalho em equipe</li>
-                        <li><i class="fas fa-laptop"></i> Informática básica</li>
+                        <li><i class="fas fa-laptop"></i> Informática</li>
                         <li><i class="fas fa-rocket"></i> Aprendizado rápido</li>
                         <li><i class="fas fa-clock"></i> Pontualidade</li>
                         <li><i class="fas fa-chart-line"></i> Marketing digital</li>
                         <li><i class="fas fa-hashtag"></i> Mídias sociais</li>
                         <li><i class="fas fa-hand-sparkles"></i> Organização</li>
+                        <li><i class="fas fa-calculator"></i> Administração</li>
                     </ul>
                 </div>
 
-                <!-- treinamento prático (farmácia) -->
                 <div class="info-card">
                     <div class="card-title"><i class="fas fa-clinic-medical"></i> TREINAMENTO FARMÁCIA</div>
-                    <div><i class="fas fa-calendar-alt" style="color:#e68a2e;"></i> 1 mês · Atendente de Farmácia</div>
-                    <ul style="margin-top: 0.8rem; list-style: none;">
-                        <li><i class="fas fa-circle-check" style="color:#2a7f2a;"></i> Abordagem ao público</li>
-                        <li><i class="fas fa-circle-check" style="color:#2a7f2a;"></i> Organização e reposição</li>
-                        <li><i class="fas fa-circle-check" style="color:#2a7f2a;"></i> Orientação básica ao cliente</li>
-                        <li><i class="fas fa-circle-check" style="color:#2a7f2a;"></i> Ambiente organizado</li>
+                    <div class="training-info">
+                        <i class="fas fa-calendar-alt" style="color:#e68a2e;"></i> 1 mês · Atendente de Farmácia
+                    </div>
+                    <ul class="training-list">
+                        <li><i class="fas fa-circle-check"></i> Abordagem ao público</li>
+                        <li><i class="fas fa-circle-check"></i> Organização e reposição</li>
+                        <li><i class="fas fa-circle-check"></i> Orientação básica ao cliente</li>
+                        <li><i class="fas fa-circle-check"></i> Ambiente organizado</li>
                     </ul>
                 </div>
             </div>
 
-            <!-- coluna 2 -->
+            <!-- COLUNA DIREITA -->
             <div>
-                <!-- formação acadêmica -->
                 <div class="info-card">
                     <div class="card-title"><i class="fas fa-graduation-cap"></i> FORMAÇÃO</div>
-                    <div style="font-size: 1.3rem; font-weight:600;">Ensino Médio – 2º Ano <span style="background: #c9e0ff; padding:0.2rem 1rem; border-radius:40px;">cursando</span></div>
-                    <div style="margin-top: 1rem;"><i class="fas fa-globe"></i> conclusão prevista: 2025</div>
+                    <div class="formacao-item">
+                        <strong>Ensino Médio – 2º Ano</strong>
+                        <span class="status-badge">cursando</span>
+                    </div>
+                    <div class="conclusao">Conclusão prevista: <strong>2025</strong></div>
                 </div>
 
-                <!-- cursos e qualificações -->
                 <div class="info-card">
                     <div class="card-title"><i class="fas fa-certificate"></i> QUALIFICAÇÕES</div>
-                    <div style="display:flex; flex-direction: column; gap:0.8rem;">
+                    <div class="qualificacoes-list">
                         <span><i class="fas fa-computer"></i> Informática Técnica</span>
                         <span><i class="fas fa-briefcase"></i> Administração Básica</span>
                         <span><i class="fas fa-share-nodes"></i> Mídias Sociais</span>
@@ -378,129 +130,41 @@ v            backdrop-filter: blur(10px);
                     </div>
                 </div>
 
-                <!-- informações adicionais + chamada -->
                 <div class="info-card">
-                    <div class="card-title"><i class="fas fa-lightbulb"></i> + INTERESSES</div>
+                    <div class="card-title"><i class="fas fa-lightbulb"></i> INTERESSES</div>
                     <p><i class="fas fa-heart" style="color:#dc2626;"></i> Tecnologia, informática, atendimento, inovação</p>
-                    <p><i class="fas fa-arrow-right"></i> Disponível para aprender, seguir processos e colaborar.</p>
+                    <p><i class="fas fa-arrow-right" style="color:#3182ce;"></i> Disponível para aprender, seguir processos e colaborar</p>
                     <div class="pill-data">
                         <span><i class="fas fa-badge-check"></i> responsável</span>
                         <span><i class="fas fa-badge-check"></i> proativo</span>
                         <span><i class="fas fa-badge-check"></i> disciplinado</span>
                     </div>
                 </div>
-                <!-- selo de data de nascimento adicional (já mostrado, mas reforço) -->
-                <div style="background: #e5f0ff; border-radius: 2rem; padding: 0.5rem 1rem; text-align:center;">
-                    <i class="fas fa-id-card"></i> Data nasc.: 23/05/2006 · <strong>18 anos (idade aprendiz)</strong>
+
+                <div class="nascimento-card">
+                    <i class="fas fa-id-card"></i> 
+                    <span>Data nasc.: 23/05/2006 · <strong>18 anos (idade aprendiz)</strong></span>
                 </div>
             </div>
         </div>
 
-        <!-- frase cativante + botão de contratação com javascript -->
-        <div class="cta-message floating-badge">
-            <i class="fas fa-star"></i> perfil com energia, foco e vontade de crescer <i class="fas fa-star"></i>
+        <!-- FRASE DE EFEITO -->
+        <div class="cta-message">
+            <i class="fas fa-star"></i> Perfil com energia, foco e vontade de crescer <i class="fas fa-star"></i>
         </div>
 
+        <!-- BOTÃO DE CONTRATAÇÃO -->
         <div class="hire-zone">
             <button class="hire-btn" id="contratarBtn">
                 <i class="fas fa-handshake"></i> CONTRATAR ESTE TALENTO <i class="fas fa-arrow-right"></i>
             </button>
         </div>
-        <p style="text-align:center; color:#1d3b5c; margin-top:0.5rem;"><i class="fas fa-phone-volume"></i> clique e veja a mensagem de motivação</p>
+        <div class="footer-note">
+            <i class="fas fa-phone-volume"></i> Clique no botão para ver os contatos
+        </div>
     </div>
 
-    <!-- JavaScript para ação de contratação simulada e efeito -->
-    <script>
-        (function() {
-            const botao = document.getElementById('contratarBtn');
-            const card = document.getElementById('profileCard');
-
-            // Mensagens de estímulo ao recrutador
-            const mensagens = [
-                "🎯 RECRUTADOR: você acaba de encontrar um jovem comprometido!",
-                "📞 Telefone (71) 98481-6493 · envie uma mensagem agora!",
-                "✅ Eduardo está pronto para contribuir com sua equipe!",
-                "🚀 Habilidades em informática, marketing e atendimento!",
-                "🌟 Responsabilidade, pontualidade e vontade de aprender!",
-                "📧 Eduardo.silveira899@gmail.com – disponível para entrevista!"
-            ];
-
-            // Função que simula o "interesse de contratação"
-            function dispararInteresse() {
-                // Escolhe uma mensagem aleatória
-                const msgAleatoria = mensagens[Math.floor(Math.random() * mensagens.length)];
-                
-                // cria um elemento flutuante de notificação
-                const notificacao = document.createElement('div');
-                notificacao.innerText = msgAleatoria;
-                notificacao.style.position = 'fixed';
-                notificacao.style.bottom = '30px';
-                notificacao.style.left = '50%';
-                notificacao.style.transform = 'translateX(-50%)';
-                notificacao.style.backgroundColor = '#1f4a7a';
-                notificacao.style.color = 'white';
-                notificacao.style.padding = '1.2rem 2.5rem';
-                notificacao.style.borderRadius = '60px';
-                notificacao.style.fontSize = '1.4rem';
-                notificacao.style.fontWeight = 'bold';
-                notificacao.style.boxShadow = '0 15px 30px rgba(0,50,100,0.5)';
-                notificacao.style.zIndex = '9999';
-                notificacao.style.border = '4px solid #f5b342';
-                notificacao.style.backdropFilter = 'blur(5px)';
-                notificacao.style.animation = 'fadeInOut 4s ease forwards';
-                notificacao.style.textAlign = 'center';
-                document.body.appendChild(notificacao);
-
-                // Adiciona animação via keyframe criada dinamicamente
-                const styleSheet = document.createElement("style");
-                styleSheet.innerHTML = `
-                    @keyframes fadeInOut {
-                        0% { opacity:0; transform: translateX(-50%) scale(0.8); bottom:10px; }
-                        15% { opacity:1; transform: translateX(-50%) scale(1.05); bottom:40px; }
-                        80% { opacity:1; transform: translateX(-50%) scale(1); bottom:40px; }
-                        100% { opacity:0; transform: translateX(-50%) scale(0.9); bottom:10px; visibility:hidden; }
-                    }`;
-                document.head.appendChild(styleSheet);
-
-                // Remove a notificação após 4 segundos
-                setTimeout(() => {
-                    notificacao.remove();
-                }, 4000);
-
-                // Pequena animação no card (feedback visual)
-                card.style.transition = '0.2s';
-                card.style.backgroundColor = '#ecf7ff';
-                setTimeout(() => {
-                    card.style.backgroundColor = '';
-                }, 400);
-
-                // Simula envio de alerta para recrutador
-                console.log('Recrutador interessado! Mensagem: ' + msgAleatoria);
-            }
-
-            // Evento de clique no botão
-            botao.addEventListener('click', (e) => {
-                e.preventDefault();
-                dispararInteresse();
-            });
-
-            // Atrair ainda mais: ao passar o mouse no botão, ele vibra levemente
-            botao.addEventListener('mouseenter', () => {
-                botao.style.transform = 'scale(1.04) translateY(-4px)';
-            });
-            botao.addEventListener('mouseleave', () => {
-                botao.style.transform = 'scale(1)';
-            });
-
-            // Elemento extra: se clicar em qualquer lugar do card com ícone de mensagem (não obrigatório)
-            // Adiciona leve interatividade nas competências (opcional)
-            const skills = document.querySelectorAll('.skill-list li');
-            skills.forEach(skill => {
-                skill.addEventListener('click', () => {
-                    // Mostra no console, mas também pode disparar a notificação rápida
-                });
-            });
-        })();
-    </script>
+    <!-- JavaScript -->
+    <script src="assets/js/script.js"></script>
 </body>
 </html>
