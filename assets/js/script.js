@@ -23,8 +23,8 @@ const contatoInfo = {
  * Mostra as informações de contato
  */
 function mostrarContato() {
-    const btn = document.getElementById('contratarBtn');
-    const originalText = btn.innerHTML;
+    const btn = document.querySelector('.btn-subliminar');
+    const originalHtml = btn.innerHTML;
     
     // Feedback visual de carregamento
     btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> CARREGANDO...';
@@ -37,30 +37,23 @@ function mostrarContato() {
         // Cria alert personalizado
         const mensagemCompleta = `📞 ${contatoInfo.telefone}\n📧 ${contatoInfo.email}\n\n${mensagem}`;
         
-        // Tenta usar alert nativo
         alert(mensagemCompleta);
         
         // Restaura o botão
-        btn.innerHTML = originalText;
+        btn.innerHTML = originalHtml;
         btn.disabled = false;
     }, 500);
 }
 
 /**
- * Função para copiar telefone para área de transferência
+ * Função para copiar texto para área de transferência
  */
-function copiarTelefone() {
-    navigator.clipboard.writeText(contatoInfo.telefone).then(() => {
-        mostrarNotificacao('Telefone copiado! 📞');
-    });
-}
-
-/**
- * Função para copiar email para área de transferência
- */
-function copiarEmail() {
-    navigator.clipboard.writeText(contatoInfo.email).then(() => {
-        mostrarNotificacao('Email copiado! 📧');
+function copiarTexto(texto, mensagem) {
+    navigator.clipboard.writeText(texto).then(() => {
+        mostrarNotificacao(mensagem);
+    }).catch(() => {
+        // Fallback para navegadores antigos
+        alert(`${mensagem}: ${texto}`);
     });
 }
 
@@ -77,9 +70,9 @@ function mostrarNotificacao(mensagem) {
         transform: translateX(-50%);
         background: #1f4a7a;
         color: white;
-        padding: 1rem 2rem;
+        padding: 0.8rem 2rem;
         border-radius: 50px;
-        font-size: 1.2rem;
+        font-size: 1rem;
         z-index: 9999;
         border: 2px solid #f5b342;
         animation: fadeOut 2s ease forwards;
@@ -96,27 +89,7 @@ function mostrarNotificacao(mensagem) {
  * Inicializa eventos quando a página carrega
  */
 document.addEventListener('DOMContentLoaded', () => {
-    // Botão principal
-    const btnContratar = document.getElementById('contratarBtn');
-    if (btnContratar) {
-        btnContratar.addEventListener('click', mostrarContato);
-    }
-    
-    // Adiciona evento de clique nos contatos
-    document.querySelectorAll('.contact-item').forEach(item => {
-        item.addEventListener('click', (e) => {
-            const texto = item.textContent.trim();
-            if (texto.includes('(71)')) {
-                copiarTelefone();
-            } else if (texto.includes('@')) {
-                copiarEmail();
-            }
-        });
-        item.style.cursor = 'pointer';
-        item.title = 'Clique para copiar';
-    });
-    
-    // Animação de entrada
+    // Animação de entrada nos cards
     const cards = document.querySelectorAll('.info-card');
     cards.forEach((card, index) => {
         card.style.opacity = '0';
@@ -129,7 +102,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-// Estilo para fadeOut
+// Estilo para fadeOut (adicionado dinamicamente)
 const style = document.createElement('style');
 style.textContent = `
     @keyframes fadeOut {
